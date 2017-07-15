@@ -7,7 +7,7 @@ services:
             - "443:443"
         restart: always
         volumes:
-            - "./htdocs:/var/www/localhost"
+            - "./app:/var/www/localhost"
             - "./logs/nginx:/var/log/nginx"
             - "./etc/nginx/default.conf:/etc/nginx/conf.d/default.conf"
         depends_on:
@@ -32,5 +32,5 @@ services:
             dockerfile: php-fpm/Dockerfile
         restart: always
         volumes:
-            - "./htdocs:/var/www/localhost"
+            - "./app:/var/www/localhost"
             - "./etc/php/php.ini:/usr/local/etc/php/conf.d/php.ini"
