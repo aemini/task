@@ -27,7 +27,9 @@ services:
         volumes:
             - "./data/mysql:/var/lib/mysql"
     php:
-        image: php:5.6-fpm
+        build:
+            context: ./docker
+            dockerfile: php-fpm/Dockerfile
         restart: always
         volumes:
             - "./htdocs:/var/www/localhost"
